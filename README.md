@@ -75,4 +75,12 @@ Tenen les mateixes caracteristiques i atributs que els personatjes? Si es aixi p
 
 Gracies.
 
+### 4a resposta
+
+El màxim de vida d'un personatge és el valor que apareix amb la icona del cor en la targeta (no podrà mai ser superior a aquest valor).
+
+Exacte, els herois tindran un atac igual al valor d'atac (amb el símbol del puny), però podrà ser modificat per alguna arma o encanteri.
+
+Els objectes poden pujar alguna característica depenent de l'objecte. Vosaltres mateixos, però com a exemple us dic que una arma tindrà un valor d'atac que se li sumarà al del personatge, si és una poció pujarà vida o alguna altra habilitat. (no totes a la vegada). De tota manera tota aquesta part la podeu fer de manera més lliure, per simplificar faríem objectes tipus arma o encanteri (puja l'atac) o poció (puja la vida).
+
 

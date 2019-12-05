@@ -99,3 +99,10 @@ el arquetip és el tipo d'heroi?
   
   L'arquetip de moment serà a títol informatiu, no afectarà en res.
 
+### 6a ronda 
+
+quins son els valors maxims i els valors minims de cada caracteristica per a cada personatge
+
+### 6a resposta
+
+Tots els valors seran de 1 a 4, excepte la vida que anirà de 5 a 20.

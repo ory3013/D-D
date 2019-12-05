@@ -1,0 +1,41 @@
+{
+  // Use IntelliSense to learn about possible attributes.
+  // Hover to view descriptions of existing attributes.
+  "version": "0.2.0",
+  "configurations": [
+   {
+      "type": "java",
+      "name": "CodeLens (Launch) - App",
+      "request": "launch",
+      "mainClass": "dandd.App",
+      "projectName": "DandD"
+   },
+   {
+      "type": "java",
+      "name": "CodeLens (Launch) - App",
+      "request": "launch",
+      "mainClass": "DandD.App",
+      "projectName": "DandD"
+   },
+   {
+      "type": "java",
+      "name": "CodeLens (Launch) - App",
+      "request": "launch",
+      "mainClass": "App",
+      "projectName": "D-D_dc4400b2"
+   },
+   {
+      "type": "java",
+      "name": "CodeLens (Launch) - Game",
+      "request": "launch",
+      "mainClass": "Game",
+      "projectName": "D-D_dc4400b2"
+   },
+   {
+      "type": "java",
+      "name": "Debug (Launch) - Current File",
+      "request": "launch",
+      "mainClass": "${file}"
+   }
+]
+}

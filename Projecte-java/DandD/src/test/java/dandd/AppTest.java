@@ -1,4 +1,4 @@
-package DandD;
+package dandd;
 
 import static org.junit.Assert.assertTrue;
 

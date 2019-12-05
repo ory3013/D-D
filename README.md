@@ -5,6 +5,8 @@
 - Documentació: Mohamed
 - Proves: Sergio
 
+gitpod.io/#https://github.com/ory3013/D-D
+
 ## Preguntes al client
 
 ### 1a ronda: 

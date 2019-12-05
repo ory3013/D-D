@@ -31,7 +31,7 @@ Ens podries explicar que significa cadascun dels atributs? Gràcies
 ### 2a resposta
 Us envio l'explicació.El punt 3 i 5 no faria falta fer-los.
  
-![imatge 2](https://raw.githubusercontent.com/ory3013/D-D/master/imatge2.jpg)
+![imatge 2](https://raw.githubusercontent.com/ory3013/D-D/master/imatge2.png)
 ### 3a ronda
 El joc ha de ser online? 
 Els personatges tenen nivell i/o experiencia?

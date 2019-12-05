@@ -23,7 +23,7 @@ Als nostres jocs hi ha els següents personatges:
  En quant als paràmetres us envio una de les fitxes de personatge del nostre joc de taula.
  Enemics hi ha: orcs, llops i serps.
 
-inserta la imatge1 
+![imatge 1](https://raw.githubusercontent.com/ory3013/D-D/master/imatge1.jpg)
      
 ### 2a ronda
 Ens podries explicar que significa cadascun dels atributs? Gràcies
@@ -31,8 +31,7 @@ Ens podries explicar que significa cadascun dels atributs? Gràcies
 ### 2a resposta
 Us envio l'explicació.El punt 3 i 5 no faria falta fer-los.
  
-inserta la imatge 2.
-
+![imatge 2](https://raw.githubusercontent.com/ory3013/D-D/master/imatge2.jpg)
 ### 3a ronda
 El joc ha de ser online? 
 Els personatges tenen nivell i/o experiencia?

@@ -83,4 +83,19 @@ Exacte, els herois tindran un atac igual al valor d'atac (amb el símbol del pun
 
 Els objectes poden pujar alguna característica depenent de l'objecte. Vosaltres mateixos, però com a exemple us dic que una arma tindrà un valor d'atac que se li sumarà al del personatge, si és una poció pujarà vida o alguna altra habilitat. (no totes a la vegada). De tota manera tota aquesta part la podeu fer de manera més lliure, per simplificar faríem objectes tipus arma o encanteri (puja l'atac) o poció (puja la vida).
 
+### 5a ronda 
+
+s'ha de fer un disseny del combat? 
+
+Tots els personatges poden utilitzar tots els tipus d'objectes? (un mag pot utilitzar un arma i un guerrer pot utilitzar un encanteri) o hi ha armes per a cada tipus de heroi?
+
+el arquetip és el tipo d'heroi? 
+
+### 5a resposta
+
+  Sí que estaria bé tenir un esquema de com funcionarà el combat (quins paràmetres influïran i com ho faran), l'ordre de l'atac,...
+  
+  Tots els personatges poden tenir els objectes, però els guerrers no podran usar els màgics.
+  
+  L'arquetip de moment serà a títol informatiu, no afectarà en res.
 

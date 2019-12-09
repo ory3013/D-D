@@ -7,6 +7,7 @@ import java.lang.reflect.*;
 
 public class App 
 {
+    public static Personatge personatge;
     public static void main(String[] args){
         
         Personatge[] personatges = {
@@ -26,7 +27,7 @@ public class App
         }
 
         clearScreen();
-        Personatge personatge = new Personatge(personatges[seleccio].getNom(), personatges[seleccio].getArquetip());
+        personatge = new Personatge(personatges[seleccio].getNom(), personatges[seleccio].getArquetip());
         System.out.println("Heu seleccionat el personatge " + personatges[seleccio - 1].getNom());
         pause();
 
@@ -43,12 +44,12 @@ public class App
         }
         
         personatge.setVelocitat(preguntarStat("la Velocitat"));
-        personatge.setVelocitat(preguntarStat(" Atac"));
-        personatge.setVelocitat(preguntarStat("Defensa"));
-        personatge.setVelocitat(preguntarStat("Agaunt"));
-        personatge.setVelocitat(preguntarStat("Coneixement"));
-        personatge.setVelocitat(preguntarStat("Voluntat"));
-        personatge.setVelocitat(preguntarStat("Persepcio"));
+        personatge.setAtac(preguntarStat("l'Atac"));
+        personatge.setDefensa(preguntarStat("la Defensa"));
+        personatge.setAguant(preguntarStat("l'Aguant"));
+        personatge.setConeixement(preguntarStat("el Coneixement"));
+        personatge.setVoluntat(preguntarStat("la Voluntat"));
+        personatge.setPercepcio(preguntarStat("la Percepcio"));
 
         clearScreen();
         System.out.println("Seleccioneu la vida [5 - 20]");
@@ -59,6 +60,45 @@ public class App
         }
         personatge.setVida(seleccio);
 
+        mostarMenuPreBatalla();
+        
+    }
+
+    private static void mostarMenuPreBatalla() {
+        boolean menu = true;
+        while (menu) {
+            clearScreen();
+            System.out.println("Que voleu fer?");
+            System.out.println("1 - Veure stats del jugador");
+            System.out.println("2 - Lluitar amb el seguent enemic");
+            int seleccio = (int) preguntarNumero(1, 2);
+            menu = false;
+            switch (seleccio) {
+                case 1:
+                    mostrarStats();
+                    break;
+                case 2:
+                    seleccionarEnemic();
+                    break;
+                default:
+                    menu = true;
+            }
+        }
+    }
+
+    private static void mostrarStats() {
+        clearScreen();
+        System.out.println("Velocitat: "+personatge.getVelocitat());
+        System.out.println("Atac: "+personatge.getAtac());
+        System.out.println("Defensa: "+personatge.getDefensa());
+        System.out.println("Aguant: "+personatge.getAguant());
+        System.out.println("Coneixement: "+personatge.getConeixement());
+        System.out.println("Voluntat: "+personatge.getVoluntat());
+        System.out.println("Percepcio: "+personatge.getPercepcio());
+    }
+
+    public static Enemic seleccionarEnemic() {
+        return new Enemic(preguntarStat("la Velocitat"), preguntarStat("La Vida"), preguntarStat("l'Atac"), preguntarStat("la Defensa"));
     }
 
     public static double preguntarNumero(int min, int max) {

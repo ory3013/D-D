@@ -9,7 +9,7 @@ public class Personatge {
     private double vida;
     private double aguant;
     private double defensa;
-    private double fuerza;
+    private double atac;
     private double coneixement;
     private double voluntat;
     private double percepcio;
@@ -21,7 +21,7 @@ public class Personatge {
         this.setVida(0);
         this.setAguant(0);
         this.setDefensa(0);
-        this.setFuerza(0);
+        this.setAtac(0);
         this.setConeixement(0);
         this.setVoluntat(0);
         this.setPercepcio(0);
@@ -51,12 +51,12 @@ public class Personatge {
         this.coneixement = coneixement;
     }
 
-    public double getFuerza() {
-        return fuerza;
+    public double getAtac() {
+        return atac;
     }
 
-    public void setFuerza(double fuerza) {
-        this.fuerza = fuerza;
+    public void setAtac(double atac) {
+        this.atac = atac;
     }
 
     public double getDefensa() {

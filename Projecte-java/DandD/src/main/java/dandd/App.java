@@ -42,8 +42,8 @@ public class App
             personatge.setGenere(seleccio);
         }
         
-        personatge.setVelocitat(preguntarStat("Velocitat"));
-        personatge.setVelocitat(preguntarStat("Atac"));
+        personatge.setVelocitat(preguntarStat("la Velocitat"));
+        personatge.setVelocitat(preguntarStat(" Atac"));
         personatge.setVelocitat(preguntarStat("Defensa"));
         personatge.setVelocitat(preguntarStat("Agaunt"));
         personatge.setVelocitat(preguntarStat("Coneixement"));

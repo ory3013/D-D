@@ -5,8 +5,8 @@ public class Enemic {
     private double vida;
     private double defensa;
     private double atac;
-    private Objecte[] objectes;
 
+    //contructors
     Enemic() {
         setVelocitat(0);
         setVida(0);
@@ -19,6 +19,8 @@ public class Enemic {
         this.setDefensa(0);
         this.setAtac(0);
     }
+
+    // Getters & Setters
 
     public double getAtac() {
         return atac;
@@ -50,5 +52,10 @@ public class Enemic {
 
     public void setVelocitat(double velocitat) {
         this.velocitat = velocitat;
+    }
+
+    //metodes
+    public void atacar(Personatge personatge) {
+        personatge.setVida(personatge.getVida() - (this.getAtac() - personatge.getDefensa()) );
     }
 }

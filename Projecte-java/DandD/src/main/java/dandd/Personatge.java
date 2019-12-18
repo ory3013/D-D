@@ -13,6 +13,7 @@ public class Personatge {
     private double coneixement;
     private double voluntat;
     private double percepcio;
+    private Objecte[] objectes;
 
     Personatge(String nom, int arquetip) {
         this.setNom(nom);
@@ -25,6 +26,14 @@ public class Personatge {
         this.setConeixement(0);
         this.setVoluntat(0);
         this.setPercepcio(0);
+    }
+
+    public Objecte[] getObjectes() {
+        return objectes;
+    }
+
+    public void setObjectes(Objecte[] objectes) {
+        this.objectes = objectes;
     }
 
     public double getPercepcio() {
@@ -113,6 +122,12 @@ public class Personatge {
 
     public void setNom(String nom) {
         this.nom = nom;
+    }
+
+    //Metodes
+
+    public void atacar(Enemic enemic) {
+        enemic.setVida(enemic.getVida() - (this.getAtac() - enemic.getDefensa()) );
     }
 
 }

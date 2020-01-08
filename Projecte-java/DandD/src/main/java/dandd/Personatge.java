@@ -143,4 +143,14 @@ public class Personatge {
         }
     }
 
+    public void elmiminarObjecte(Objecte objecte) {
+        boolean eliminat = false;
+        for (int i = 0; i < this.objectes.length; i++) {
+            if (!eliminat && this.objectes[i] == objecte) {
+                this.objectes[i] = null;
+                eliminat = true;
+            }
+        }
+    }
+
 }

@@ -12,6 +12,7 @@ public class App
 {
     public static Personatge personatge;
     public static Enemic enemic;
+    public static Objecte[] objectesAplicats = new Objecte[30];
     public static void main(String[] args){
         
         Personatge[] personatges = {
@@ -146,6 +147,8 @@ public class App
                     Objecte objecte = seleccionarObjecte();
                     if (objecte != null) {
                         objecte.utilitzar(personatge);
+                        AfeigirObjecteAplicat(objecte);
+                        personatge.elmiminarObjecte(objecte);
                     }
                     break;
                 case 5:
@@ -326,5 +329,31 @@ public class App
         }
         objecte.setTipus(tipus + 1);
         return objecte;
+    }
+    public static void AfeigirObjecteAplicat(Objecte objecte) {
+        boolean afeigit = false;
+        for (int i = 0; i < objectesAplicats.length; i++) {
+            if (!afeigit && objectesAplicats[i] != null) {
+                objectesAplicats[i] = objecte;
+                afeigit = true;
+            }
+        }
+    }
+
+    public static void esborrarStatsAplicats() {
+        for (int i = 0; i < objectesAplicats.length; i++) {
+            if (objectesAplicats[i] != null) {
+                String stat = ((Encanteri) objectesAplicats[i]).getStat();
+                double quantitat = ((Encanteri) objectesAplicats[i]).getQuantitat();
+                if (stat.equals("atac")) {
+                    personatge.setAtac(personatge.getAtac() - quantitat);
+                } else if (stat.equals("defensa")) {
+                    personatge.setDefensa(personatge.getDefensa() - quantitat);
+                } else if (stat.equals("velocitat")) {
+                    personatge.setVelocitat(personatge.getVelocitat() - quantitat);
+                }
+                objectesAplicats[i] = null;
+            }
+        }
     }
 }

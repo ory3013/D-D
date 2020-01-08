@@ -96,7 +96,7 @@ public class App
             System.out.println("3 - Atacar");
             System.out.println("4 - Utilitzar objecte");
             System.out.println("5 - Escapar");
-            int seleccio = (int) preguntarNumero(1, 2, false);
+            int seleccio = (int) preguntarNumero(1, 5, false);
             switch (seleccio) {
                 case 1:
                     mostrarStats();
@@ -163,7 +163,29 @@ public class App
     }
 
     public static Enemic seleccionarEnemic() {
-        return new Enemic(preguntarStat("la Velocitat"), preguntarStat("La Vida"), preguntarStat("l'Atac"), preguntarStat("la Defensa"));
+        Enemic enemic = new Enemic(0, 0, 0, 0);
+        double seleccio;
+        seleccio = preguntarStat("la Velocitat");
+        if (seleccio == 0) {
+            seleccio = getRandomNumberInRange(1,4);
+        }
+        enemic.setVelocitat(seleccio);
+        seleccio = preguntarStat("la Vida");
+        if (seleccio == 0) {
+            seleccio = getRandomNumberInRange(1,4);
+        }
+        enemic.setVida(seleccio);
+        seleccio = preguntarStat("l'Atac");
+        if (seleccio == 0) {
+            seleccio = getRandomNumberInRange(1,4);
+        }
+        enemic.setAtac(seleccio);
+        seleccio = preguntarStat("la Defensa");
+        if (seleccio == 0) {
+            seleccio = getRandomNumberInRange(1,4);
+        }
+        enemic.setDefensa(seleccio);
+        return enemic;
     }
 
     public static Objecte seleccionarObjecte() {
@@ -199,7 +221,10 @@ public class App
             try {
                 Scanner sc = new Scanner(System.in);
                 number = sc.nextDouble();
-                if (number < min || number > max || (zero && number == 0)) {
+                if (zero && number == 0) {
+                    return number;
+                }
+                if (number < min || number > max) {
                     throw new EmptyStackException();
                 }
                 error = false;

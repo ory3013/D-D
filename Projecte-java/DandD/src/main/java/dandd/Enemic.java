@@ -56,6 +56,8 @@ public class Enemic {
 
     //metodes
     public void atacar(Personatge personatge) {
-        personatge.setVida(personatge.getVida() - (this.getAtac() - personatge.getDefensa()) );
+        double atac = this.getAtac() - personatge.getDefensa();
+        atac = atac > 0 ? atac : 1;
+        personatge.setVida(personatge.getVida() - atac);
     }
 }

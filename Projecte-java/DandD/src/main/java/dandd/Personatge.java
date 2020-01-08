@@ -127,7 +127,9 @@ public class Personatge {
     //Metodes
 
     public void atacar(Enemic enemic) {
-        enemic.setVida(enemic.getVida() - (this.getAtac() - enemic.getDefensa()) );
+        double atac = this.getAtac() - enemic.getDefensa();
+        atac = atac > 0 ? atac : 1;
+        enemic.setVida(enemic.getVida() - atac );
     }
 
 }

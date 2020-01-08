@@ -133,4 +133,14 @@ public class Personatge {
         enemic.setVida(enemic.getVida() - atac );
     }
 
+    public void AfeigirObjecte(Objecte objecte) {
+        boolean afeigit = false;
+        for (int i = 0; i < this.objectes.length; i++) {
+            if (!afeigit && this.objectes[i] != null) {
+                this.objectes[i] = objecte;
+                afeigit = true;
+            }
+        }
+    }
+
 }

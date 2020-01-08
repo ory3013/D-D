@@ -26,6 +26,7 @@ public class Personatge {
         this.setConeixement(0);
         this.setVoluntat(0);
         this.setPercepcio(0);
+        this.setObjectes(new Objecte[20]);
     }
 
     public Objecte[] getObjectes() {

@@ -3,6 +3,9 @@ package dandd;
 import java.util.EmptyStackException;
 import java.util.Random;
 import java.util.Scanner;
+import java.io.File;
+import java.io.IOException;
+import java.lang.management.ManagementFactory;
 import java.lang.reflect.*;
 
 public class App 
@@ -28,7 +31,7 @@ public class App
         }
         seleccio--;
 
-        clearScreen();
+        clearScreen(); // Esborra la pantalla
         personatge = new Personatge(personatges[seleccio].getNom(), personatges[seleccio].getArquetip());
         System.out.println("Heu seleccionat el personatge " + personatges[seleccio].getNom());
         pause();
@@ -53,7 +56,7 @@ public class App
         personatge.setVoluntat(preguntarStat("la Voluntat"));
         personatge.setPercepcio(preguntarStat("la Percepcio"));
 
-        clearScreen();
+        clearScreen(); // Esborra la pantalla
         System.out.println("Seleccioneu la vida [5 - 20]");
         System.out.println("Premeu 0 per seleccionar aleatoriament");
         seleccio = (int) preguntarNumero(5, 20, true);
@@ -69,7 +72,7 @@ public class App
     private static void mostarMenuPreBatalla() {
         boolean menu = true;
         while (menu) {
-            clearScreen();
+            clearScreen(); // Esborra la pantalla
             System.out.println("Que voleu fer?");
             System.out.println("1 - Veure stats del jugador");
             System.out.println("2 - Lluitar amb el seguent enemic");
@@ -89,7 +92,7 @@ public class App
     private static void batalla() {
         boolean menu = true;
         while (menu) {
-            clearScreen();
+            clearScreen(); // Esborra la pantalla
             System.out.println("Que voleu fer?");
             System.out.println("1 - Veure stats del jugador");
             System.out.println("2 - veure stats del enemic");
@@ -121,17 +124,27 @@ public class App
                         enemic.atacar(personatge);
                         personatge.atacar(enemic);
                     }
-                    clearScreen();
+                    clearScreen(); // Esborra la pantalla
                     System.out.println("Vida actual del personatge: " + personatge.getVida());
                     System.out.println("Vida actual del enemic: " + enemic.getVida());
                     pause();
+                    if (personatge.getVida() <= 0.0) {
+                        System.out.println("Heu mort.");
+                        pause();
+                        System.exit(0);
+                    }
+                    if (enemic.getVida() <= 0.0) {
+                        System.out.println("L'enemic a mort.");
+                        pause();
+                        menu = false;
+                    }
                     break;
                 case 4:
                     Objecte objecte = seleccionarObjecte();
                     objecte.utilitzar(personatge);
                     break;
                 case 5:
-                    clearScreen();
+                    clearScreen(); // Esborra la pantalla
                     System.out.println("Heu escapat.");
                     pause();
                     menu = false;
@@ -141,7 +154,7 @@ public class App
     }
 
     private static void mostrarStats() {
-        clearScreen();
+        clearScreen(); // Esborra la pantalla
         System.out.println("Vida: "+personatge.getVida());
         System.out.println("Velocitat: "+personatge.getVelocitat());
         System.out.println("Atac: "+personatge.getAtac());
@@ -154,7 +167,7 @@ public class App
     }
 
     private static void mostrarStatsEnemic() {
-        clearScreen();
+        clearScreen(); // Esborra la pantalla
         System.out.println("Vida: "+enemic.getVida());
         System.out.println("Velocitat: "+enemic.getVelocitat());
         System.out.println("Defensa: "+enemic.getDefensa());
@@ -189,12 +202,12 @@ public class App
     }
 
     public static Objecte seleccionarObjecte() {
-        boolean menu = true;
+        boolean menu = true; //variable centinella per sortir del menu
         while (menu) {
             
             Objecte[] objectes = personatge.getObjectes();
 
-            clearScreen();
+            clearScreen(); // Esborra la pantalla
             System.out.println("Quin objecte voleu fer servir?");
             for (int i = 0; i > objectes.length; i++) {
                 if (objectes[i].getTipus() < 1) {
@@ -238,7 +251,7 @@ public class App
 
     public static double preguntarStat(String nom) {
             double seleccio;
-            clearScreen();
+            clearScreen(); // Esborra la pantalla
             System.out.println("Seleccioneu "+nom+" [1 - 4]");
             System.out.println("Premeu 0 per seleccionar aleatoriament");
             seleccio = (int) preguntarNumero(1, 4, true);
@@ -267,6 +280,5 @@ public class App
 
 		Random r = new Random();
 		return r.nextInt((max - min) + 1) + min;
-	}
-
+    }
 }

@@ -134,14 +134,19 @@ public class App
                         System.exit(0);
                     }
                     if (enemic.getVida() <= 0.0) {
+                        Objecte objecteGuanyat = generarObjecteAleatori();
+                        personatge.AfeigirObjecte(objecteGuanyat);
                         System.out.println("L'enemic a mort.");
+                        System.out.println("Heu guanyat " + objecteGuanyat.getNom());
                         pause();
                         menu = false;
                     }
                     break;
                 case 4:
                     Objecte objecte = seleccionarObjecte();
-                    objecte.utilitzar(personatge);
+                    if (objecte != null) {
+                        objecte.utilitzar(personatge);
+                    }
                     break;
                 case 5:
                     clearScreen(); // Esborra la pantalla
@@ -282,7 +287,7 @@ public class App
 		return r.nextInt((max - min) + 1) + min;
     }
 
-    public Objecte generarObjecteAleatori() {
+    public static Objecte generarObjecteAleatori() {
         int tipus = getRandomNumberInRange(0, 3);
         Objecte objecte = null;
         switch (tipus) {
@@ -319,6 +324,7 @@ public class App
                 objecte.setNom("pocio (+"+vida+")");
                 break;
         }
+        objecte.setTipus(tipus + 1);
         return objecte;
     }
 }

@@ -281,4 +281,44 @@ public class App
 		Random r = new Random();
 		return r.nextInt((max - min) + 1) + min;
     }
+
+    public Objecte generarObjecteAleatori() {
+        int tipus = getRandomNumberInRange(0, 3);
+        Objecte objecte = null;
+        switch (tipus) {
+            case 0: // arma/armadura
+                objecte = new Arma(); //inizialitza l'objecte com a arma
+                int tipusArma = getRandomNumberInRange(0, 1); //defineix si sera un arma o un escut
+                if (tipusArma == 0) {
+                    objecte.setNom("Espada"); //estableix el nom del objecte a espada
+                    ((Arma) objecte).setAtac(getRandomNumberInRange(1, 4)); //estableix un atac aleatori
+                } else {
+                    objecte.setNom("Escut"); //estableix el nom del objecte a escut
+                    ((Arma) objecte).setDefensa(getRandomNumberInRange(1, 4));//estableix una defensa aleatori
+                }
+                ((Arma) objecte).setVelocitat(getRandomNumberInRange(-4, 4));//estableix una velocitat aleatori
+                break;
+            case 1: // encanteri
+                objecte = new Encanteri();//inizialitza l'objecte com a encanteri
+                int stat = getRandomNumberInRange(0, 2); //defineix quin stat modificara l'encanteri
+                String statText = "";
+                if (stat == 0) {
+                    statText = "atac";
+                } else if (stat == 1) {
+                    statText = "defensa";
+                } else {
+                   statText = "velocitat";
+                }
+                ((Encanteri) objecte).setStat(statText);
+                objecte.setNom("Encanteri de "+ statText); //estableix el nom a encanteri de  + atribut que es modifica
+                ((Encanteri) objecte).setQuantitat(getRandomNumberInRange(1, 4));
+                break;
+            case 2: //pocio
+                objecte = new Pocio(); //inizialitza l'objecte com a pocio
+                double vida = getRandomNumberInRange(1, 4);
+                objecte.setNom("pocio (+"+vida+")");
+                break;
+        }
+        return objecte;
+    }
 }

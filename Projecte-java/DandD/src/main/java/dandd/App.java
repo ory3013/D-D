@@ -147,7 +147,9 @@ public class App
                     Objecte objecte = seleccionarObjecte();
                     if (objecte != null) {
                         objecte.utilitzar(personatge);
-                        AfeigirObjecteAplicat(objecte);
+                        if (objecte.getTipus() == 2) {
+                            AfeigirObjecteAplicat(objecte);
+                        }
                         personatge.elmiminarObjecte(objecte);
                     }
                     break;
@@ -217,8 +219,8 @@ public class App
 
             clearScreen(); // Esborra la pantalla
             System.out.println("Quin objecte voleu fer servir?");
-            for (int i = 0; i > objectes.length; i++) {
-                if (objectes[i].getTipus() < 1) {
+            for (int i = 0; i < objectes.length; i++) {
+                if (objectes[i] != null && objectes[i].getTipus() > 1) {
                     System.out.println( (i + 1) + " - " + objectes[i].getNom());
                 }
             }

@@ -110,37 +110,8 @@ public class App
                     mostrarStatsEnemic();
                     break;
                 case 3:
-                    if (personatge.getVelocitat() == enemic.getVelocitat()) {
-                        int prioritat = getRandomNumberInRange(0,1);
-                        if (prioritat == 0) {
-                            personatge.atacar(enemic);
-                            enemic.atacar(personatge);
-                        } else {
-                            enemic.atacar(personatge);
-                            personatge.atacar(enemic);
-                        }
-                    } else if (personatge.getVelocitat() > enemic.getVelocitat()) {
-                        personatge.atacar(enemic);
-                        enemic.atacar(personatge);
-                    } else if (personatge.getVelocitat() < enemic.getVelocitat()) {
-                        enemic.atacar(personatge);
-                        personatge.atacar(enemic);
-                    }
-                    clearScreen(); // Esborra la pantalla
-                    System.out.println("Vida actual del personatge: " + personatge.getVida());
-                    System.out.println("Vida actual del enemic: " + enemic.getVida());
-                    pause();
-                    if (personatge.getVida() <= 0.0) {
-                        System.out.println("Heu mort.");
-                        pause();
-                        System.exit(0);
-                    }
+                    atacar();
                     if (enemic.getVida() <= 0.0) {
-                        Objecte objecteGuanyat = generarObjecteAleatori();
-                        personatge.AfeigirObjecte(objecteGuanyat);
-                        System.out.println("L'enemic a mort.");
-                        System.out.println("Heu guanyat " + objecteGuanyat.getNom());
-                        pause();
                         menu = false;
                     }
                     break;
@@ -161,6 +132,41 @@ public class App
                     menu = false;
                     break;
             }
+        }
+    }
+
+    private static void atacar() {
+        if (personatge.getVelocitat() == enemic.getVelocitat()) {
+            int prioritat = getRandomNumberInRange(0,1);
+            if (prioritat == 0) {
+                personatge.atacar(enemic);
+                enemic.atacar(personatge);
+            } else {
+                enemic.atacar(personatge);
+                personatge.atacar(enemic);
+            }
+        } else if (personatge.getVelocitat() > enemic.getVelocitat()) {
+            personatge.atacar(enemic);
+            enemic.atacar(personatge);
+        } else if (personatge.getVelocitat() < enemic.getVelocitat()) {
+            enemic.atacar(personatge);
+            personatge.atacar(enemic);
+        }
+        clearScreen(); // Esborra la pantalla
+        System.out.println("Vida actual del personatge: " + personatge.getVida());
+        System.out.println("Vida actual del enemic: " + enemic.getVida());
+        pause();
+        if (personatge.getVida() <= 0.0) {
+            System.out.println("Heu mort.");
+            pause();
+            System.exit(0);
+        }
+        if (enemic.getVida() <= 0.0) {
+            Objecte objecteGuanyat = generarObjecteAleatori();
+            personatge.AfeigirObjecte(objecteGuanyat);
+            System.out.println("L'enemic a mort.");
+            System.out.println("Heu guanyat " + objecteGuanyat.getNom());
+            pause();
         }
     }
 

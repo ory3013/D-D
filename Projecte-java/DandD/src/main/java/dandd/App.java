@@ -38,16 +38,16 @@ public class App
         System.out.println("Heu seleccionat el personatge " + personatges[seleccio].getNom()); //mostra per pantalla el personatge seleccionat.
         pause(); //espera a que l'usuari premi enter
 
-        if (personatge.getArquetip() == 1 || personatge.getArquetip() == 2) {
+        if (personatge.getArquetip() == 1 || personatge.getArquetip() == 2) { //comprova si el personatge es guerrer o mag
             System.out.println("Seleccioneu un genere");
             System.out.println("1 - Mascle");
             System.out.println("2 - Femella");
             System.out.println("Premeu 0 per seleccionar aleatoriament");
-            seleccio = (int) preguntarNumero(1, 2, true);
-            if (seleccio == 0) {
-                seleccio = getRandomNumberInRange(1,2);
+            seleccio = (int) preguntarNumero(1, 2, true); //pregunta a l'usuari un numero entre 1 y 2, zero inclos
+            if (seleccio == 0) { //comprova si el numero es un 0
+                seleccio = getRandomNumberInRange(1,2); // agafa un numero entre 1 y 2
             }
-            personatge.setGenere(seleccio);
+            personatge.setGenere(seleccio); // estableix el genere del personatge
         }
         
         personatge.setVelocitat(preguntarStat("la Velocitat"));

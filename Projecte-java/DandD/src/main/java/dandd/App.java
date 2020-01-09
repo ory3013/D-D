@@ -15,27 +15,28 @@ public class App
     public static Objecte[] objectesAplicats = new Objecte[30];
     public static void main(String[] args){
         
+        //inicialitza un array amb 1 personatges de cata tipus
         Personatge[] personatges = {
             new Personatge("Guerrer", 1),
             new Personatge("Mag", 2),
             new Personatge("Elfling", 3)
         };
 
-        System.out.println("Selecciona un personatge");
-        for(int i = 0; i < personatges.length; i++)  {
-            System.out.println((i+1) + " - " + personatges[i].getNom());
+        System.out.println("Selecciona un personatge"); //mostra un missagte per pantalla
+        for(int i = 0; i < personatges.length; i++)  { // bucle que recorre els personatges de l'array
+            System.out.println((i+1) + " - " + personatges[i].getNom()); //mostra per pantalla el personatge que s'esta recorrent.
         }
-        System.out.println("Premeu 0 per seleccionar aleatoriament");
-        int seleccio = (int) preguntarNumero(1, personatges.length, true);
-        if (seleccio == 0) {
-            seleccio = getRandomNumberInRange(1, personatges.length);
+        System.out.println("Premeu 0 per seleccionar aleatoriament"); //mostra un missagte per pantalla
+        int seleccio = (int) preguntarNumero(1, personatges.length, true); //pregunta a l'usuari un numero entre 1 y la quantitat de personatges a l'array, numero zero inclos
+        if (seleccio == 0) { //comprova si el numero introduit es un zero
+            seleccio = getRandomNumberInRange(1, personatges.length); // agafa un numero aleatori entre 1 y la quantitat de personatges a l'array
         }
         seleccio--;
 
         clearScreen(); // Esborra la pantalla
-        personatge = new Personatge(personatges[seleccio].getNom(), personatges[seleccio].getArquetip());
-        System.out.println("Heu seleccionat el personatge " + personatges[seleccio].getNom());
-        pause();
+        personatge = new Personatge(personatges[seleccio].getNom(), personatges[seleccio].getArquetip()); //inicialitza el personatge
+        System.out.println("Heu seleccionat el personatge " + personatges[seleccio].getNom()); //mostra per pantalla el personatge seleccionat.
+        pause(); //espera a que l'usuari premi enter
 
         if (personatge.getArquetip() == 1 || personatge.getArquetip() == 2) {
             System.out.println("Seleccioneu un genere");
@@ -239,7 +240,7 @@ public class App
 
     public static double preguntarNumero(int min, int max, boolean zero) {
         double number = 0;
-        boolean error = true;
+        boolean error = true; // defineix variable centinella
         while (error) {
             try {
                 Scanner sc = new Scanner(System.in);
@@ -278,9 +279,10 @@ public class App
     }
 
     public static void clearScreen() {
-        System.out.print("\033[H\033[2J");  
-        System.out.flush();  
+        /*System.out.print("\033[H\033[2J");  
+        System.out.flush();  */
         try {
+            //executa la comanda per netejar la consola necesaria segons el sistema
             new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
         } catch(Exception e) {}
         

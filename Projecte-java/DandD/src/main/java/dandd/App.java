@@ -279,13 +279,12 @@ public class App
     }
 
     public static void clearScreen() {
-        /*System.out.print("\033[H\033[2J");  
-        System.out.flush();  */
         try {
-            //executa la comanda per netejar la consola necesaria segons el sistema
-            new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
-        } catch(Exception e) {}
-        
+            if (System.getProperty("os.name").contains("Windows"))
+                new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
+            else
+                Runtime.getRuntime().exec("clear");
+        } catch (IOException | InterruptedException ex) {}        
     }
 
     private static int getRandomNumberInRange(int min, int max) {

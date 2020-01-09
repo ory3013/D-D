@@ -37,7 +37,7 @@ class Encanteri extends Objecte {
         }
     }
 
-    //retira els effectes aplicats al jugador
+    //retira els efectes aplicats al jugador
     public void estabilitzar(Personatge personatge) {
         if (stat == "atac") {
             //decrementa l'atac del personatge

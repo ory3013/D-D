@@ -127,27 +127,27 @@ public class Personatge {
 
     //Metodes
 
-    public void atacar(Enemic enemic) {
-        double atac = this.getAtac() - enemic.getDefensa();
-        atac = atac > 0 ? atac : 1;
-        enemic.setVida(enemic.getVida() - atac );
+    public void atacar(Enemic enemic) { // quan s'inicia l'atac del personatge 
+        double atac = this.getAtac() - enemic.getDefensa();  // agafa l'atac del pesonatge i la defensa de l'enemic i les resta
+        atac = atac > 0 ? atac : 1; // si el atac és 0 o menys l'atac es quedara en 1, en canvi si l'atac és superior a 0 es quedara aquell atac
+        enemic.setVida(enemic.getVida() - atac ); // es resta l'atac del personatge a la vida de l'enemic
     }
 
     public void AfeigirObjecte(Objecte objecte) {
-        boolean afeigit = false;
-        for (int i = 0; i < this.objectes.length; i++) {
-            if (!afeigit && this.objectes[i] == null) {
-                this.objectes[i] = objecte;
+        boolean afeigit = false; // agafa l'objecte del enemic
+        for (int i = 0; i < this.objectes.length; i++) { //recorre cada espai de l'inventari (maxim 20 objectes)
+            if (!afeigit && this.objectes[i] == null) { // si no esta afegit i l'espai és null 
+                this.objectes[i] = objecte; // s'afegeix l'objecte
                 afeigit = true;
             }
         }
     }
 
-    public void elmiminarObjecte(Objecte objecte) {
-        boolean eliminat = false;
-        for (int i = 0; i < this.objectes.length; i++) {
-            if (!eliminat && this.objectes[i] == objecte) {
-                this.objectes[i] = null;
+    public void elmiminarObjecte(Objecte objecte) { 
+        boolean eliminat = false; // el jugador utilitza un objecte
+        for (int i = 0; i < this.objectes.length; i++) { 
+            if (!eliminat && this.objectes[i] == objecte) { // es busca aquest objecte ala llista 
+                this.objectes[i] = null; // s'elimina i es deix l'espai buit
                 eliminat = true;
             }
         }

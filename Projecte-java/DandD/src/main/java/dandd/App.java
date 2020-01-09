@@ -279,6 +279,7 @@ public class App
     }
 
     public static void clearScreen() {
+        System.out.flush();
         try {
             if (System.getProperty("os.name").contains("Windows"))
                 new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();

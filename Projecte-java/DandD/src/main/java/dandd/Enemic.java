@@ -55,9 +55,9 @@ public class Enemic {
     }
 
     //metodes
-    public void atacar(Personatge personatge) {
-        double atac = this.getAtac() - personatge.getDefensa();
-        atac = atac > 0 ? atac : 1;
-        personatge.setVida(personatge.getVida() - atac);
+    public void atacar(Personatge personatge) { // quan s'inicia l'atac del enemic 
+        double atac = this.getAtac() - personatge.getDefensa(); // agafa l'atac del enemic i la defensa del pesonatge i les resta
+        atac = atac > 0 ? atac : 1; // si el atac és 0 o menys l'atac es quedara en 1, en canvi si l'atac és superior a 0 es quedara aquell atac
+        personatge.setVida(personatge.getVida() - atac); // es resta l'atac del enemic a la vida del personatge
     }
 }

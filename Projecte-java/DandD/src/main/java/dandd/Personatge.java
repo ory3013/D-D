@@ -127,10 +127,12 @@ public class Personatge {
 
     //Metodes
 
-    public void atacar(Enemic enemic) { // quan s'inicia l'atac del personatge 
-        double atac = this.getAtac() - enemic.getDefensa();  // agafa l'atac del pesonatge i la defensa de l'enemic i les resta
-        atac = atac > 0 ? atac : 1; // si el atac és 0 o menys l'atac es quedara en 1, en canvi si l'atac és superior a 0 es quedara aquell atac
-        enemic.setVida(enemic.getVida() - atac ); // es resta l'atac del personatge a la vida de l'enemic
+    public void atacar(Enemic enemic) { // quan s'inicia l'atac del personatge
+        if (this.getVida() > 0.0) {
+            double atac = this.getAtac() - enemic.getDefensa();  // agafa l'atac del pesonatge i la defensa de l'enemic i les resta
+            atac = atac > 0 ? atac : 1; // si el atac és 0 o menys l'atac es quedara en 1, en canvi si l'atac és superior a 0 es quedara aquell atac
+            enemic.setVida(enemic.getVida() - atac ); // es resta l'atac del personatge a la vida de l'enemic
+        } 
     }
 
     public void AfeigirObjecte(Objecte objecte) {

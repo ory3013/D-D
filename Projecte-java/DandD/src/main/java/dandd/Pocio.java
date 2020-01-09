@@ -16,8 +16,8 @@ class Pocio extends Objecte {
 
     // Metodes
 
-    public void utilitzar(Personatge personatge, Enemic enemic) {
-        personatge.setVida(personatge.getVida() + this.getVida());
+    public void utilitzar(Personatge personatge, Enemic enemic) { //s'utilitza
+        personatge.setVida(personatge.getVida() + this.getVida()); // s'augmenta la vida del personatge
         enemic.atacar(personatge);
     }
 }

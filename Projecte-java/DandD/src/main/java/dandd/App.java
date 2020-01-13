@@ -8,6 +8,9 @@ import java.io.IOException;
 import java.lang.management.ManagementFactory;
 import java.lang.reflect.*;
 
+/**
+ * Classe principal del programa
+ */
 public class App 
 {
     public static Personatge personatge;

@@ -222,21 +222,21 @@ public class App
         boolean menu = true; //variable centinella per sortir del menu
         while (menu) {
             
-            Objecte[] objectes = personatge.getObjectes();
+            Objecte[] objectes = personatge.getObjectes(); //obte els objectes del personatge
 
             clearScreen(); // Esborra la pantalla
             System.out.println("Quin objecte voleu fer servir?");
-            for (int i = 0; i < objectes.length; i++) {
-                if (objectes[i] != null && objectes[i].getTipus() > 1) {
-                    System.out.println( (i + 1) + " - " + objectes[i].getNom());
+            for (int i = 0; i < objectes.length; i++) { //recorre tots els slots de l'inventari
+                if (objectes[i] != null && objectes[i].getTipus() > 1) { //comprova si el slot no esta buit i no es un arma
+                    System.out.println( (i + 1) + " - " + objectes[i].getNom()); //mostra l'objecte del slot actual
                 }
             }
             System.out.println("0 - Tornar");
-            int seleccio = (int) preguntarNumero(1, objectes.length, true);
-            if (seleccio == 0) {
-                return null;
+            int seleccio = (int) preguntarNumero(1, objectes.length, true); //pregunta un numero entre 1 y el numero de slots de l'inventary
+            if (seleccio == 0) { //comprova si el numero es un 0
+                return null; //retorna null
             } else if (seleccio > 0 && seleccio <= objectes.length) {
-                return objectes[seleccio];
+                return objectes[seleccio]; //retorna l'objecte seleccionat
             } else {
                 menu = true;
             }
@@ -249,17 +249,17 @@ public class App
         boolean error = true; // defineix variable centinella
         while (error) {
             try {
-                Scanner sc = new Scanner(System.in);
-                number = sc.nextDouble();
-                if (zero && number == 0) {
+                Scanner sc = new Scanner(System.in); 
+                number = sc.nextDouble(); // pregunta a l'usuari un numero
+                if (zero && number == 0) { //comproba si el numero es zero y si s'accepten zeros
                     return number;
                 }
-                if (number < min || number > max) {
-                    throw new EmptyStackException();
+                if (number < min || number > max) { //comprova si el numero es al rang introduit per parametres del metode
+                    throw new EmptyStackException(); // tira una exepcio per repetir el bucle
                 }
                 error = false;
             } catch (Exception e) {
-                System.out.println("Input invalid");
+                System.out.println("Input invalid"); //avisa a l'usuari que l'entrada es invalida
                 error = true;
             }
         }

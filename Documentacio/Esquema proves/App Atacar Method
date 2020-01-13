@@ -1,0 +1,11 @@
+Complexitat ciclomàtica: 6 - 5 + 2 = 3
+
+Camí 1: 1 - 2 - 5
+
+Camí 2: 1 - 2 - 3 - 2 - 5
+
+Camí 3: 1 - 2 - 3 - 4 - 2 - 5
+
+
+1: camí impossible
+  -

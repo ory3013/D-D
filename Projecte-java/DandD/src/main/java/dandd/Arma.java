@@ -1,33 +1,47 @@
 package dandd;
 
+/**
+ * Arma que pot equiparse un personatge
+ */
 class Arma extends Objecte {
     
     private double atac;
     private double defensa;
     private double velocitat;
-
-    public double getAtac() {
-        return atac;
-    }
-
-    public double getVelocitat() {
-        return velocitat;
-    }
-
-    public void setVelocitat(double velocitat) {
-        this.velocitat = velocitat;
-    }
-
-    public double getDefensa() {
-        return defensa;
-    }
-
-    public void setDefensa(double defensa) {
-        this.defensa = defensa;
-    }
-
-    public void setAtac(double atac) {
-        this.atac = atac;
-    }
-
+	/**
+	 * @return retorna l'atac
+	 */
+	public double getAtac() {
+		return atac;
+	}
+	/**
+	 * @param atac value to set
+	 */
+	public void setAtac(double atac) {
+		this.atac = atac;
+	}
+	/**
+	 * @return retorna la defensa
+	 */
+	public double getDefensa() {
+		return defensa;
+	}
+	/**
+	 * @param defensa value to set
+	 */
+	public void setDefensa(double defensa) {
+		this.defensa = defensa;
+	}
+	/**
+	 * @return retorna la velocitat
+	 */
+	public double getVelocitat() {
+		return velocitat;
+	}
+	/**
+	 * @param velocitat value to set
+	 */
+	public void setVelocitat(double velocitat) {
+		this.velocitat = velocitat;
+	}
 }

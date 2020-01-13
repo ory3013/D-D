@@ -13,6 +13,11 @@ public class App
     public static Personatge personatge;
     public static Enemic enemic;
     public static Objecte[] objectesAplicats = new Objecte[30];
+    
+    /** 
+     * Metode principal, s'executa al iniciar l'aplicacio
+     * @param args arguments introduits al iniciar la aplicacio
+     */
     public static void main(String[] args){
         
         //inicialitza un array amb 1 personatges de cata tipus
@@ -71,6 +76,9 @@ public class App
         
     }
 
+    /**
+     * Mostra el menu anterior a una batalla per pantalla
+     */
     private static void mostarMenuPreBatalla() {
         boolean menu = true;
         while (menu) {
@@ -91,6 +99,9 @@ public class App
         }
     }
 
+    /**
+     * Mostra el menu de batalla per pantalla
+     */
     private static void batalla() {
         boolean menu = true;
         while (menu) {
@@ -135,6 +146,9 @@ public class App
         }
     }
 
+    /**
+     * executa una ronda d'atacs
+     */
     private static void atacar() {
         if (personatge.getVelocitat() == enemic.getVelocitat()) {
             int prioritat = getRandomNumberInRange(0,1);
@@ -170,6 +184,9 @@ public class App
         }
     }
 
+    /**
+     * Mostra per pantalla els stats del jugador
+     */
     private static void mostrarStats() {
         clearScreen(); // Esborra la pantalla
         System.out.println("Vida: "+personatge.getVida());
@@ -183,6 +200,9 @@ public class App
         pause();
     }
 
+    /**
+     * Mostra per pantalla els stats de l'enemic
+     */
     private static void mostrarStatsEnemic() {
         clearScreen(); // Esborra la pantalla
         System.out.println("Vida: "+enemic.getVida());
@@ -192,6 +212,11 @@ public class App
         pause();
     }
 
+    
+    /** 
+     * Crea un enemic amb els estats indicats per l'usuari
+     * @return Enemic Retorna l'enemic generat
+     */
     public static Enemic seleccionarEnemic() {
         Enemic enemic = new Enemic(0, 0, 0, 0);
         double seleccio;
@@ -218,6 +243,11 @@ public class App
         return enemic;
     }
 
+    
+    /** 
+     * Permet al usuari seleccionar un objecte del seu inventari
+     * @return Objecte Objecte seleccionat
+     */
     public static Objecte seleccionarObjecte() {
         boolean menu = true; //variable centinella per sortir del menu
         while (menu) {
@@ -244,6 +274,14 @@ public class App
         return null;
     }
 
+    
+    /** 
+     * Pregunta a l'usuari un numero entre un minim i un maxim
+     * @param min el numero minim que l'usuari pot introduir
+     * @param max el numero maxim que l'usuari pot introduir
+     * @param zero indica si s'accepta el numero zero, inclus si esta fora del rang
+     * @return double retorna el numero introduit per l'usuari
+     */
     public static double preguntarNumero(int min, int max, boolean zero) {
         double number = 0;
         boolean error = true; // defineix variable centinella
@@ -266,6 +304,12 @@ public class App
         return number;
     }
 
+    
+    /** 
+     * pregunta a l'usuari el valor d'un stat
+     * @param nom nom del stat que es vol preguntar
+     * @return double retorna el valor al stat introduit
+     */
     public static double preguntarStat(String nom) {
             double seleccio;
             clearScreen(); // Esborra la pantalla
@@ -278,12 +322,18 @@ public class App
             return seleccio;
     }
 
+    /**
+     * pausa l'execucio del programa fins que l'usuari premi enter
+     */
     public static void pause() {
         Scanner scan = new Scanner(System.in);
         System.out.print("Prem la tecla Enter per continuar . . . ");
         scan.nextLine();
     }
 
+    /**
+     * Esborra el contingut de la pantalla
+     */
     public static void clearScreen() {
         System.out.flush();
         try {
@@ -294,6 +344,13 @@ public class App
         } catch (IOException | InterruptedException ex) {}        
     }
 
+    
+    /** 
+     * Genera un numero aleatori entre el rang introduit
+     * @param min numero minim que es pot generar
+     * @param max numero maxim que es pot generar
+     * @return int numero generat
+     */
     private static int getRandomNumberInRange(int min, int max) {
 
 		if (min >= max) {
@@ -304,6 +361,11 @@ public class App
 		return r.nextInt((max - min) + 1) + min;
     }
 
+    
+    /** 
+     * Genera un objecte aleatoriament
+     * @return Objecte objecte generat
+     */
     public static Objecte generarObjecteAleatori() {
         int tipus = getRandomNumberInRange(0, 3);
         Objecte objecte = null;
@@ -344,6 +406,12 @@ public class App
         objecte.setTipus(tipus + 1);
         return objecte;
     }
+    
+    /** 
+     * afegeix un objecte a la llista d'objectes utilitzats d'urant una ronda
+     * amb l'objectiu de retirar els efectes a la seguent ronda
+     * @param objecte objecte que es vol afeigir a la llista
+     */
     public static void AfeigirObjecteAplicat(Objecte objecte) {
         boolean afeigit = false;
         for (int i = 0; i < objectesAplicats.length; i++) {
@@ -354,6 +422,9 @@ public class App
         }
     }
 
+    /**
+     * resta els estats aplicats al personatge per encanteris durant la ronda anterior
+     */
     public static void esborrarStatsAplicats() {
         for (int i = 0; i < objectesAplicats.length; i++) {
             if (objectesAplicats[i] != null) {

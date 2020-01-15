@@ -26,10 +26,10 @@ public class Enemic {
      * @return 
      */
     Enemic(double velocitat, double vida, double defensa, double atac) {
-        this.setVelocitat(0);
-        this.setVida(0);
-        this.setDefensa(0);
-        this.setAtac(0);
+        this.setVelocitat(velocitat);
+        this.setVida(vida);
+        this.setDefensa(defensa);
+        this.setAtac(atac);
     }
 
     // Getters & Setters

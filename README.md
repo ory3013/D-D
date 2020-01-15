@@ -10,6 +10,7 @@ IDE en xarxa integrada amb github: [gitpod.io/#https://github.com/ory3013/D-D](h
 ## Documentacio
 
 [JavaDocs](https://ory3013.github.io/D-D)
+[JAR executable](https://github.com/ory3013/D-D/releases/tag/1.0)
 
 ## Preguntes al client
 

@@ -15,6 +15,12 @@ public class Personatge {
     private double percepcio;
     private Objecte[] objectes;
 
+    
+    /** 
+     * @param nom
+     * @param arquetip
+     * @return 
+     */
     Personatge(String nom, int arquetip) {
         this.setNom(nom);
         this.setArquetip(arquetip);
@@ -29,104 +35,204 @@ public class Personatge {
         this.setObjectes(new Objecte[20]);
     }
 
+    
+    /** 
+     * @return Objecte[]
+     */
     public Objecte[] getObjectes() {
         return objectes;
     }
 
+    
+    /** 
+     * @param objectes
+     */
     public void setObjectes(Objecte[] objectes) {
         this.objectes = objectes;
     }
 
+    
+    /** 
+     * @return double
+     */
     public double getPercepcio() {
         return percepcio;
     }
 
+    
+    /** 
+     * @param percepcio
+     */
     public void setPercepcio(double percepcio) {
         this.percepcio = percepcio;
     }
 
+    
+    /** 
+     * @return double
+     */
     public double getVoluntat() {
         return voluntat;
     }
 
+    
+    /** 
+     * @param voluntat
+     */
     public void setVoluntat(double voluntat) {
         this.voluntat = voluntat;
     }
 
+    
+    /** 
+     * @return double
+     */
     public double getConeixement() {
         return coneixement;
     }
 
+    
+    /** 
+     * @param coneixement
+     */
     public void setConeixement(double coneixement) {
         this.coneixement = coneixement;
     }
 
+    
+    /** 
+     * @return double
+     */
     public double getAtac() {
         return atac;
     }
 
+    
+    /** 
+     * @param atac
+     */
     public void setAtac(double atac) {
         this.atac = atac;
     }
 
+    
+    /** 
+     * @return double
+     */
     public double getDefensa() {
         return defensa;
     }
 
+    
+    /** 
+     * @param defensa
+     */
     public void setDefensa(double defensa) {
         this.defensa = defensa;
     }
 
+    
+    /** 
+     * @return double
+     */
     public double getAguant() {
         return aguant;
     }
 
+    
+    /** 
+     * @param aguant
+     */
     public void setAguant(double aguant) {
         this.aguant = aguant;
     }
 
+    
+    /** 
+     * @return double
+     */
     public double getVida() {
         return vida;
     }
 
+    
+    /** 
+     * @param vida
+     */
     public void setVida(double vida) {
         this.vida = vida;
     }
 
+    
+    /** 
+     * @return double
+     */
     public double getVelocitat() {
         return velocitat;
     }
 
+    
+    /** 
+     * @param velocitat
+     */
     public void setVelocitat(double velocitat) {
         this.velocitat = velocitat;
     }
 
+    
+    /** 
+     * @return int
+     */
     public int getGenere() {
         return genere;
     }
 
+    
+    /** 
+     * @param genere
+     */
     public void setGenere(int genere) {
         this.genere = genere;
     }
 
+    
+    /** 
+     * @return int
+     */
     public int getArquetip() {
         return arquetip;
     }
 
+    
+    /** 
+     * @param arquetip
+     */
     public void setArquetip(int arquetip) {
         this.arquetip = arquetip;
     }
 
+    
+    /** 
+     * @return String
+     */
     public String getNom() {
         return nom;
     }
 
+    
+    /** 
+     * @param nom
+     */
     public void setNom(String nom) {
         this.nom = nom;
     }
 
     //Metodes
 
+    
+    /** 
+     * @param enemic
+     */
     public void atacar(Enemic enemic) { // quan s'inicia l'atac del personatge
         if (this.getVida() > 0.0) {
             double atac = this.getAtac() - enemic.getDefensa();  // agafa l'atac del pesonatge i la defensa de l'enemic i les resta
@@ -135,6 +241,10 @@ public class Personatge {
         } 
     }
 
+    
+    /** 
+     * @param objecte
+     */
     public void AfeigirObjecte(Objecte objecte) {
         boolean afeigit = false; // agafa l'objecte del enemic
         for (int i = 0; i < this.objectes.length; i++) { //recorre cada espai de l'inventari (maxim 20 objectes)
@@ -145,6 +255,10 @@ public class Personatge {
         }
     }
 
+    
+    /** 
+     * @param objecte
+     */
     public void elmiminarObjecte(Objecte objecte) { 
         boolean eliminat = false; // el jugador utilitza un objecte
         for (int i = 0; i < this.objectes.length; i++) { 

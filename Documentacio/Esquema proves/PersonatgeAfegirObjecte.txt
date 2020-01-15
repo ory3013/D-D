@@ -1,1 +1,14 @@
+Complexitat ciclomàtica: 7 - 6 + 2 = 3
 
+Camí 1: 1 - 6
+
+Camí 2: 1 - 2 - 3 - 5 - 6
+
+Camí 3: 1 - 2 - 3 - 4 - 5 - 6
+
+
+Cami 1: camí impossible
+
+Cami 2: passa quan la primera posició de l'array esta buida this.object.lenght == null
+
+Cami 3: passa quan la primera posició de l'array esta plena this.object.lenght == nul

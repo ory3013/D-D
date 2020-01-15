@@ -1,1 +1,18 @@
+Complexitat ciclomàtica: 11 - 9 + 2 = 4
 
+Camí 1: 1 - 2 - 3 - 4 - 9
+
+Camí 2: 1 - 2 - 3 - 5 - 9
+
+Camí 3: 1 - 6 - 7 - 9 
+
+Camí 4: 1 - 6 - 8 - 9
+
+
+Camí 1: si la velocitat és igual que la del enemic i per random et surt 0
+
+Camí 2: si la velocitat és igual que la del enemic i per random et surt 1
+
+Camí 3: si la velocitat és diferent que la del enemic i ets més ràpid
+
+Camí 4: si la velocitat és diferent que la del enemic i ets més lent

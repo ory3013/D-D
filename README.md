@@ -5,7 +5,7 @@
 - Documentació: Mohamed
 - Proves: Sergio
 ## Eines
-IDE en xarxa integrada amb github: [gitpod.io/#https://github.com/ory3013/D-D](gitpod.io/#https://github.com/ory3013/D-D)
+IDE en xarxa integrada amb github: [gitpod.io/#https://github.com/ory3013/D-D](https://gitpod.io/#https://github.com/ory3013/D-D)
 
 
 ## Preguntes al client

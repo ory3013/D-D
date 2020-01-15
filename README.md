@@ -7,6 +7,9 @@
 ## Eines
 IDE en xarxa integrada amb github: [gitpod.io/#https://github.com/ory3013/D-D](https://gitpod.io/#https://github.com/ory3013/D-D)
 
+## Documentacio
+
+[JavaDocs](https://ory3013.github.io/D-D)
 
 ## Preguntes al client
 

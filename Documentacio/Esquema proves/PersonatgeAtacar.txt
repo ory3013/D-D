@@ -1,14 +1,18 @@
-Complexitat ciclomàtica: 7 - 6 + 2 = 3
+Complexitat ciclomàtica: 11 - 9 + 2 = 4
 
-Camí 1: 1 - 6
+Camí 1: 1 - 2 - 3 - 4 - 9
 
-Camí 2: 1 - 2 - 3 - 5 - 6
+Camí 2: 1 - 2 - 3 - 5 - 9
 
-Camí 3: 1 - 2 - 3 - 4 - 5 - 6
+Camí 3: 1 - 6 - 7 - 9 
+
+Camí 4: 1 - 6 - 8 - 9
 
 
-Cami 1: camí impossible
+Camí 1: si la velocitat és igual que la del enemic i per random et surt 0
 
-Cami 2: passa quan la primera posició de l'array esta buida this.object.lenght == null
+Camí 2: si la velocitat és igual que la del enemic i per random et surt 1
 
-Cami 3: passa quan la primera posició de l'array esta plena this.object.lenght == null
+Camí 3: si la velocitat és diferent que la del enemic i ets més ràpid
+
+Camí 4: si la velocitat és diferent que la del enemic i ets més lent

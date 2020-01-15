@@ -13,7 +13,7 @@ import org.junit.Test;
 public class PersonatgeTest 
 {
     /**
-     * Rigorous Test :-)
+     * Rigorous Test :-)h
      */
     @Test
     public void siElPersonatgeTe0DeVidaNoAtaca()

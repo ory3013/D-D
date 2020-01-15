@@ -1,5 +1,7 @@
 package dandd;
-
+/**
+ * Enemic que es pot crear
+ */
 public class Enemic {
     private double velocitat;
     private double vida;
@@ -9,6 +11,7 @@ public class Enemic {
     //contructors
     
     /** 
+     * Enemic amb les seves estadistiques al 0
      * @return 
      */
     Enemic() {
@@ -19,10 +22,11 @@ public class Enemic {
     }
     
     /** 
-     * @param velocitat
-     * @param vida
-     * @param defensa
-     * @param atac
+     * Enemic contra el que haurem de lluitar
+     * @param velocitat velocitat que assignarem a l'enemic
+     * @param vida vida que assignarem a l'enemic
+     * @param defensa defensa que assignarem a l'enemic
+     * @param atac atac que assignarem a l'enemic
      * @return 
      */
     Enemic(double velocitat, double vida, double defensa, double atac) {
@@ -36,7 +40,8 @@ public class Enemic {
 
     
     /** 
-     * @return double
+     * Getter del parametre nom
+     * @return retorna l'atac que tindra l'enemic
      */
     public double getAtac() {
         return atac;
@@ -44,7 +49,8 @@ public class Enemic {
 
     
     /** 
-     * @param atac
+     * Setter del parametre atac
+     * @param atac value to set
      */
     public void setAtac(double atac) {
         this.atac = atac;
@@ -52,7 +58,8 @@ public class Enemic {
 
     
     /** 
-     * @return double
+     * Getter del parametre defensa
+     * @return  retorna la defensa que tindra l'enemic
      */
     public double getDefensa() {
         return defensa;
@@ -60,7 +67,8 @@ public class Enemic {
 
     
     /** 
-     * @param defensa
+     * Setter del parametre defensa
+     * @param defensa value to set
      */
     public void setDefensa(double defensa) {
         this.defensa = defensa;
@@ -68,7 +76,8 @@ public class Enemic {
 
     
     /** 
-     * @return double
+     * Getter del parametre vida
+     * @return  retorna la vida que tindra l'enemic
      */
     public double getVida() {
         return vida;
@@ -76,7 +85,8 @@ public class Enemic {
 
     
     /** 
-     * @param vida
+     * Setter del parametre vida
+     * @param vida value to set
      */
     public void setVida(double vida) {
         this.vida = vida;
@@ -84,7 +94,8 @@ public class Enemic {
 
     
     /** 
-     * @return double
+     * Getter del parametre velocitat
+     * @return  retorna la velocitat que tindra l'enemic
      */
     public double getVelocitat() {
         return velocitat;
@@ -92,7 +103,8 @@ public class Enemic {
 
     
     /** 
-     * @param velocitat
+     * Setter del parametre velocitat
+     * @param velocitat value to set
      */
     public void setVelocitat(double velocitat) {
         this.velocitat = velocitat;
@@ -101,7 +113,8 @@ public class Enemic {
     //metodes
     
     /** 
-     * @param personatge
+     * Metode que servira per poder atacar al personatge
+     * @param personatge personatge al qual estem atacant
      */
     public void atacar(Personatge personatge) { // quan s'inicia l'atac del enemic 
         if (this.getVida() > 0.0) {

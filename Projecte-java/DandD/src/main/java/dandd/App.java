@@ -370,7 +370,7 @@ public class App
      * @return Objecte objecte generat
      */
     public static Objecte generarObjecteAleatori() {
-        int tipus = getRandomNumberInRange(0, 3);
+        int tipus = getRandomNumberInRange(0, 2);
         Objecte objecte = null;
         switch (tipus) {
             case 0: // arma/armadura

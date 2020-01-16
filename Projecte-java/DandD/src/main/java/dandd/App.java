@@ -269,7 +269,7 @@ public class App
             if (seleccio == 0) { //comprova si el numero es un 0
                 return null; //retorna null
             } else if (seleccio > 0 && seleccio <= objectes.length) {
-                return objectes[seleccio]; //retorna l'objecte seleccionat
+                return objectes[seleccio - 1]; //retorna l'objecte seleccionat
             } else {
                 menu = true;
             }

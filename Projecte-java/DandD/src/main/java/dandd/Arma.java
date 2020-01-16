@@ -1,7 +1,7 @@
 package dandd;
 
 /**
- * Arma que pot equiparse un personatge
+ * Tipus d'objecte que pot equiparse un personatge
  */
 class Arma extends Objecte {
     

@@ -24,11 +24,7 @@ public class PersonatgeTest
 
         Enemic enemicProva = new Enemic(2, 15, 3, 3);
 
-        System.out.println(enemicProva.getVida());
-
         personatgeProva.atacar(enemicProva);
-
-        System.out.println(enemicProva.getVida());
 
         assertEquals(15.0, enemicProva.getVida(), 0.1);
     }
@@ -87,5 +83,102 @@ public class PersonatgeTest
         personatgeProva.atacar(enemicProva);
 
         assertEquals(2.0, enemicProva.getVida(), 0.1);
+    }
+
+    @Test
+    public void SiUnPersonatgeNoTeCapObjecteIAfegeixUnEsGuardaALaPrimeraPosicioDelInventari()
+    {
+        Arma armaProva = new Arma();
+        Personatge personatgeProva = new Personatge("Prova", 2);
+
+        personatgeProva.AfeigirObjecte(armaProva);
+
+        Objecte[] objectes = personatgeProva.getObjectes();
+
+
+        assertEquals(armaProva, objectes[0]);
+    }
+
+    @Test
+    public void SiUnPersonatgeTe1ObjecteIAfegeixUnAltreEsGuardaALaSegonaPosicioDelInventari()
+    {
+        Arma armaProva1 = new Arma();
+        Arma armaProva2 = new Arma();
+        Personatge personatgeProva = new Personatge("Prova", 2);
+
+        personatgeProva.AfeigirObjecte(armaProva1);
+        personatgeProva.AfeigirObjecte(armaProva2);
+
+        Objecte[] objectes = personatgeProva.getObjectes();
+
+        assertEquals(armaProva2, objectes[1]);
+    }
+
+    @Test
+    public void SiUnPersonatgeTe1ObjecteALaSegonaPosicioDelInventariIAfegeixUnAltreEsGuardaALaPrimeraPosicioDelInventari()
+    {
+        Arma armaProva1 = new Arma();
+        Arma armaProva2 = new Arma();
+        Arma armaProva3 = new Arma();
+        Personatge personatgeProva = new Personatge("Prova", 2);
+
+        personatgeProva.AfeigirObjecte(armaProva1);
+        personatgeProva.AfeigirObjecte(armaProva2);
+        personatgeProva.elmiminarObjecte(armaProva1);
+        personatgeProva.AfeigirObjecte(armaProva3);
+
+        Objecte[] objectes = personatgeProva.getObjectes();
+
+        assertEquals(armaProva3, objectes[0]);
+        assertEquals(armaProva2, objectes[1]);
+    }
+
+    @Test
+    public void SiUnPersonatgeTe1ObjecteIElEleminaElInventariQuedaBuit()
+    {
+        Arma armaProva1 = new Arma();
+        Personatge personatgeProva = new Personatge("Prova", 2);
+
+        personatgeProva.AfeigirObjecte(armaProva1);
+        personatgeProva.elmiminarObjecte(armaProva1);
+
+        Objecte[] objectes = personatgeProva.getObjectes();
+
+        assertEquals(null, objectes[0]);
+    }
+
+    @Test
+    public void SiUnPersonatgeTe2ObjecteIElEleminaElUltimAquestEsEliminatDelInventari()
+    {
+        Arma armaProva1 = new Arma();
+        Arma armaProva2 = new Arma();
+        Personatge personatgeProva = new Personatge("Prova", 2);
+
+        personatgeProva.AfeigirObjecte(armaProva1);
+        personatgeProva.AfeigirObjecte(armaProva2);
+        personatgeProva.elmiminarObjecte(armaProva2);
+
+        Objecte[] objectes = personatgeProva.getObjectes();
+
+        assertEquals(null, objectes[1]);
+        assertEquals(armaProva1, objectes[0]);
+    }
+
+    @Test
+    public void SiUnPersonatgeTe2ObjecteIElEleminaElPrimerAquestEsEliminatDelInventariILaPrimeraPosicioQuedaBuida()
+    {
+        Arma armaProva1 = new Arma();
+        Arma armaProva2 = new Arma();
+        Personatge personatgeProva = new Personatge("Prova", 2);
+
+        personatgeProva.AfeigirObjecte(armaProva1);
+        personatgeProva.AfeigirObjecte(armaProva2);
+        personatgeProva.elmiminarObjecte(armaProva1);
+
+        Objecte[] objectes = personatgeProva.getObjectes();
+
+        assertEquals(null, objectes[0]);
+        assertEquals(armaProva2, objectes[1]);
+
     }
 }

@@ -1,5 +1,8 @@
 package dandd;
 
+/**
+ * Eina amb les qual pot interactuar un persontage 
+ */
 abstract class Objecte {
 
     private String nom;

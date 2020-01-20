@@ -180,7 +180,7 @@ public class App
         }
         if (enemic.getVida() <= 0.0) {
             Objecte objecteGuanyat = generarObjecteAleatori();
-            personatge.AfeigirObjecte(objecteGuanyat);
+            boolean afegit = personatge.AfeigirObjecte(objecteGuanyat);
             System.out.println("L'enemic a mort.");
             System.out.println("Heu guanyat " + objecteGuanyat.getNom());
             pause();

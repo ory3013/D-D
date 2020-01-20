@@ -186,7 +186,8 @@ public class PersonatgeTest
 
         Objecte[] objectes = personatgeProva.getObjectes();
 
-        assertEquals(armaProva21, objectes[20]);
+        assertEquals(armaProva20, objectes[19]);
+        assertEquals(false, personatgeProva.AfeigirObjecte(armaProva21));
     }
 
     //METODE ELIMINAR

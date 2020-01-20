@@ -271,10 +271,11 @@ public class Personatge {
 
     
     /** 
-     * Metode que servira per poder agafar l'objecte i afegor-lo a l'inventari
+     * Metode que servira per poder agafar l'objecte i afegir-lo a l'inventari
      * @param objecte objecte que s'afegira a l'inventari
+     * @return retorna un boolean que indica si l'objecte s'ha afegit o no
      */
-    public void AfeigirObjecte(Objecte objecte) {
+    public boolean AfeigirObjecte(Objecte objecte) {
         boolean afeigit = false; // agafa l'objecte del enemic
         for (int i = 0; i < this.objectes.length; i++) { //recorre cada espai de l'inventari (maxim 20 objectes)
             if (!afeigit && this.objectes[i] == null) { // si no esta afegit i l'espai és null 
@@ -282,6 +283,7 @@ public class Personatge {
                 afeigit = true;
             }
         }
+        return afeigit;
     }
 
     

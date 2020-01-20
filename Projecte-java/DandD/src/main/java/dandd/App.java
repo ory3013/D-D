@@ -10,6 +10,7 @@ import java.lang.reflect.*;
 
 /**
  * Classe principal del programa
+ * Executa el codi del joc fent us de les funcions propies i de les altres classes quan és necessari.
  */
 public class App 
 {

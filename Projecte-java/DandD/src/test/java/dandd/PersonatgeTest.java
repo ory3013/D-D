@@ -206,7 +206,6 @@ public class PersonatgeTest
         Arma armaProva19 = new Arma();
         Arma armaProva20 = new Arma();
         Arma armaProva21 = new Arma();
-        
         Personatge personatgeProva = new Personatge("Prova", 2);
 
         personatgeProva.AfeigirObjecte(armaProva1);

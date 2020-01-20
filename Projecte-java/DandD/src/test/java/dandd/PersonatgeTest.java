@@ -181,4 +181,57 @@ public class PersonatgeTest
         assertEquals(armaProva2, objectes[1]);
 
     }
+
+    @Test
+    public void SiUnPersonatgeTe20bjectesIAfegeixUnAltreNoEsGuarda()
+    {
+        Arma armaProva1 = new Arma();
+        Arma armaProva2 = new Arma();
+        Arma armaProva3 = new Arma();
+        Arma armaProva4 = new Arma();
+        Arma armaProva5 = new Arma();
+        Arma armaProva6 = new Arma();
+        Arma armaProva7 = new Arma();
+        Arma armaProva8 = new Arma();
+        Arma armaProva9 = new Arma();
+        Arma armaProva10 = new Arma();
+        Arma armaProva11 = new Arma();
+        Arma armaProva12 = new Arma();
+        Arma armaProva13 = new Arma();
+        Arma armaProva14 = new Arma();
+        Arma armaProva15 = new Arma();
+        Arma armaProva16 = new Arma();
+        Arma armaProva17 = new Arma();
+        Arma armaProva18 = new Arma();
+        Arma armaProva19 = new Arma();
+        Arma armaProva20 = new Arma();
+        Arma armaProva21 = new Arma();
+        Personatge personatgeProva = new Personatge("Prova", 2);
+
+        personatgeProva.AfeigirObjecte(armaProva1);
+        personatgeProva.AfeigirObjecte(armaProva2);
+        personatgeProva.AfeigirObjecte(armaProva3);
+        personatgeProva.AfeigirObjecte(armaProva4);
+        personatgeProva.AfeigirObjecte(armaProva5);
+        personatgeProva.AfeigirObjecte(armaProva6);
+        personatgeProva.AfeigirObjecte(armaProva7);
+        personatgeProva.AfeigirObjecte(armaProva8);
+        personatgeProva.AfeigirObjecte(armaProva9);
+        personatgeProva.AfeigirObjecte(armaProva10);
+        personatgeProva.AfeigirObjecte(armaProva11);
+        personatgeProva.AfeigirObjecte(armaProva12);
+        personatgeProva.AfeigirObjecte(armaProva13);
+        personatgeProva.AfeigirObjecte(armaProva14);
+        personatgeProva.AfeigirObjecte(armaProva15);
+        personatgeProva.AfeigirObjecte(armaProva16);
+        personatgeProva.AfeigirObjecte(armaProva17);
+        personatgeProva.AfeigirObjecte(armaProva18);
+        personatgeProva.AfeigirObjecte(armaProva19);
+        personatgeProva.AfeigirObjecte(armaProva20);
+        personatgeProva.AfeigirObjecte(armaProva21);
+
+        Objecte[] objectes = personatgeProva.getObjectes();
+
+        assertEquals(armaProva21, objectes[20]);
+    }
 }
